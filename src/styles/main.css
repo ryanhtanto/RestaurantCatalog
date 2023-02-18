@@ -1,0 +1,341 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+  background-color: #c5c1c0;
+}
+
+/* skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -50px;
+  background-color: #840b0d;
+  color: #eedec9;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  z-index: 100;
+  font-size: 25px;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* end skip */
+
+/* navbar */
+.app-bar {
+  padding: 8px 16px;
+  background-color: #840b0d;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+ 
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+ 
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__menu #hamburgerButton{
+  color: #eedec9;
+  font-size: 40px;
+  font-weight: 700;
+}
+ 
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+ 
+.app-bar .app-bar__brand h1 {
+  color: #eedec9;
+  text-transform: uppercase;
+  font-size: 40px;
+  user-select: none;
+}
+ 
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -200px;
+  width: 200px;
+  transition: all 0.3s;
+  background-color: #840b0d;
+  overflow: hidden;
+}
+ 
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+ 
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #eedec9;
+  padding: 8px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  width: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 650px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+ 
+  .app-bar .app-bar__brand h1 {
+    font-size: 1.5em;
+  }
+ 
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+ 
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+ 
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    margin: 0;
+  }
+}
+ 
+@media screen and (min-width: 800px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 2em;
+  }
+}
+/* end of navbar */
+
+/* restaurant item */
+
+.list {
+  margin-top: 20px;
+}
+
+.restaurant-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 80%;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.restaurant-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.restaurant-thumbnail {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.restaurant-content .restaurant-name {
+  text-align: center;
+}
+
+.restaurant-content .restaurant-name a{
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+}
+
+#query{
+  padding: 15px;
+}
+
+.rating-inner {
+  position: relative;
+  text-align: center;
+}
+
+.restaurant-rating {
+  background-color: rgba(152, 151, 151, 0.8);
+  font-size: 18px;
+  position: absolute;
+  bottom: 4px;
+  padding: 5px;
+  color: black;
+  font-weight: 700;
+}
+
+.restaurant-item__not__found{
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (max-width:600px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width:771px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width:1001px) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.list {
+  display: grid;
+  justify-items: center;
+}
+
+.sectionTitle{
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1200px) {
+  .sectionTitle{
+    margin-top: 100px;
+  }
+}
+
+/* end rest item */
+
+/* restaurant detail */
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.restaurant__name{
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+/* end of restaurant detail */
+
+/* card*/
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  background-color: #ffff;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.date{
+  font-size: 15px;
+  color: #b0b0b0;
+  margin-top: 0%;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+/* end card */
+
+/* jumbotron */
+.hero-image {
+  width: 100%;
+  height: 300px;
+}
+
+@media screen and (min-width: 1200px) {
+  #jumbotron {
+    min-width: 1000px;
+    height: 250px;
+  }
+}
+
+/* footer */
+footer {
+  background-color: #840b0d;
+  padding: 7px;
+  margin: 0%;
+}
+
+footer p {
+  text-align: center;
+  font-size: 15px;
+  color: #eedec9;
+  font-weight: 700;
+}
+
+/* footer end */
